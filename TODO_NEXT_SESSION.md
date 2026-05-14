@@ -1,8 +1,8 @@
 # TODO NEXT SESSION
 
 - Implement Phase 3: Functionality & SEO
-  - Server Actions for Forms
-  - Resend Integration (Setup)
-  - Sitemap and Robots.txt generation
-  - Structured Data for Local Business/School
-  - Final responsive check and UI polish
+  - Create Server Actions in `actions/` folder for form handling.
+  - Setup basic metadata configuration for each page.
+  - Generate `sitemap.ts` and `robots.ts`.
+  - Add JSON-LD structured data to the homepage for local SEO.
+  - Final audit of mobile views for all new pages.

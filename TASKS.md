@@ -6,11 +6,6 @@
 - [x] Configure Tailwind theme (colors, fonts)
 - [x] Set up global layout (Navbar, Footer)
 - [x] Implement core reusable components
-  - [x] Navbar
-  - [x] Footer
-  - [x] SectionHeader
-  - [x] CTASection
-  - [x] HeroSection
 - [x] Build Homepage skeleton
 
 ## Phase 2: Content & Pages
@@ -25,6 +20,9 @@
 - [x] Privacy Policy
 - [x] Terms
 - [x] Custom 404
+- [x] Fix mobile hamburger menu
+- [x] Create site.webmanifest to fix 404
+- [x] Fix Dialog/Sheet accessibility warnings
 
 ## Phase 3: Functionality & Polish
 - [ ] Contact Form server actions
