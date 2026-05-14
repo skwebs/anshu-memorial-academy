@@ -13,6 +13,7 @@ import {
   SheetTrigger,
   SheetHeader,
   SheetTitle,
+  SheetDescription,
 } from "@/components/ui/sheet";
 
 export function Navbar() {
@@ -88,6 +89,9 @@ export function Navbar() {
                     <GraduationCap className="h-6 w-6 text-primary" />
                     <span>{siteConfig.shortName}</span>
                   </SheetTitle>
+                  <SheetDescription className="sr-only">
+                    School navigation menu and student resources.
+                  </SheetDescription>
                 </SheetHeader>
                 <div className="mt-8 flex flex-col space-y-4">
                   {siteConfig.mainNav.map((item) => (

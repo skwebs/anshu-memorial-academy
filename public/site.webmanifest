@@ -1,0 +1,22 @@
+{
+  "name": "Anshu Memorial Academy",
+  "short_name": "AMA",
+  "description": "Anshu Memorial Academy - A premium Co-educational English Medium school following CBSE pattern in Rajapakar, Vaishali, Bihar.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0C4A6E",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/next.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
