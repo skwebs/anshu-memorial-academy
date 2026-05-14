@@ -47,7 +47,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           <SectionHeader
             subtitle="Vibrant Campus Life"

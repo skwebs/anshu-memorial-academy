@@ -7,9 +7,9 @@ import { GraduationCap, ArrowRight, Play } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background pt-16">
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-background py-12 md:py-20 lg:py-0">
       {/* Decorative background components */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary/50 -skew-x-12 translate-x-1/2 z-0" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary/50 -skew-x-12 translate-x-1/2 z-0 hidden lg:block" />
       <div className="absolute top-1/4 left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl z-0" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">

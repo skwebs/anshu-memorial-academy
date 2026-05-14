@@ -116,10 +116,30 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
   html {
-    @apply font-sans;
+    @apply font-sans scroll-smooth;
+    overflow-x: hidden;
   }
+  body {
+    @apply bg-background text-foreground min-h-screen antialiased;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    /* Prevent layout shift during modal open */
+    margin-right: var(--removed-body-scroll-bar-size, 0px) !important;
+  }
+}
+
+/* Ensure Radix UI doesn't cause content jump */
+[data-radix-scroll-area-viewport] {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+[data-radix-scroll-area-viewport]::-webkit-scrollbar {
+  display: none;
+}
+
+/* Fix for horizontal scroll on some mobile browsers */
+.container {
+  @apply overflow-hidden md:overflow-visible;
 }

@@ -21,9 +21,9 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed top-0 left-0 right-0 z-[100] w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 md:h-20 items-center justify-between">
           {/* Logo Section */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="rounded-full bg-primary p-1.5 text-primary-foreground">

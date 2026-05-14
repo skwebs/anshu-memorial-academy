@@ -23,6 +23,8 @@
 - [x] Fix mobile hamburger menu
 - [x] Create site.webmanifest to fix 404
 - [x] Fix Dialog/Sheet accessibility warnings
+- [x] Fix horizontal overflow and layout shifts
+- [x] Stabilize header on scroll
 
 ## Phase 3: Functionality & Polish
 - [ ] Contact Form server actions

@@ -1,8 +1,8 @@
 # PROJECT STATUS - ANSHU MEMORIAL ACADEMY
 
 ## Overview
-- **Status:** Phase 2: Core Content Development (Completed)
-- **Progress:** 80%
+- **Status:** Phase 2: Core Content Development (Completed & Polished)
+- **Progress:** 85%
 - **Current Goal:** Moving to Phase 3: Functionality & SEO
 
 ## Completed
@@ -25,6 +25,8 @@
 - [x] Production Build Verification
 - [x] Mobile Menu & Accessibility Fixes
 - [x] Web Manifest (PWA Foundation) Implementation
+- [x] Layout Stability & Horizontal Overflow Fixes
+- [x] Sticky Header & Scroll Padding Optimization
 
 ## In Progress
 - [ ] Phase 3: Functionality & SEO
@@ -43,4 +45,5 @@
 - **Animations:** Framer Motion (Gallery & Hero)
 - **Forms:** React Hook Form + Zod
 - **Type System:** TypeScript
-- **Accessibility:** Radix UI compliant (ARIA labels and descriptions)
+- **Layout:** Fixed header with dynamic main padding to prevent shifting.
+- **Scrolling:** Globally enforced `overflow-x-hidden` on HTML/Body to prevent horizontal drift.
