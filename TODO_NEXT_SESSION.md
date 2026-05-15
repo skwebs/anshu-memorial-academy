@@ -5,4 +5,5 @@
   - Setup basic metadata configuration for each page.
   - Generate `sitemap.ts` and `robots.ts`.
   - Add JSON-LD structured data to the homepage for local SEO.
-  - Final audit of mobile views for all new pages.
+  - Final audit of mobile views for all remaining pages.
+  - Performance optimization (Image optimization, etc.)

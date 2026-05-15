@@ -5,7 +5,7 @@
 - **Tagline:** Empowering Minds, Shaping Futures (Assumed)
 - **Type:** Co-educational English Medium
 - **Pattern:** CBSE Pattern Based
-- **Managed By:** Anita Bindeshwar Foundation
+- **Managed By:** AnitaBindeshwar Foundation
 
 ## Brand Voice
 - **Tone:** Warm, trustworthy, disciplined, premium, educational, welcoming.

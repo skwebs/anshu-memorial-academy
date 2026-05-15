@@ -26,7 +26,7 @@ export function HeroSection() {
               <span>Admissions Open for 2026-27</span>
             </div>
 
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               Nurturing <span className="text-primary">Excellence</span>, <br />
               Inspiring <span className="text-accent">Growth</span>.
             </h1>
@@ -53,24 +53,24 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="flex items-center space-x-8 pt-8 border-t border-border w-fit">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-8 pt-8 border-t border-border w-fit">
               <div>
-                <p className="text-3xl font-bold text-primary">Play - 8</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">
+                <p className="text-2xl sm:text-3xl font-bold text-primary">Play - 8</p>
+                <p className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider font-semibold">
                   Classes
                 </p>
               </div>
-              <div className="h-10 w-px bg-border" />
+              <div className="h-10 w-px bg-border hidden sm:block" />
               <div>
-                <p className="text-3xl font-bold text-primary">CBSE</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">
+                <p className="text-2xl sm:text-3xl font-bold text-primary">CBSE</p>
+                <p className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider font-semibold">
                   Pattern
                 </p>
               </div>
-              <div className="h-10 w-px bg-border" />
+              <div className="h-10 w-px bg-border hidden sm:block" />
               <div>
-                <p className="text-3xl font-bold text-primary">2017</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">
+                <p className="text-2xl sm:text-3xl font-bold text-primary">2017</p>
+                <p className="text-xs sm:text-sm text-muted-foreground uppercase tracking-wider font-semibold">
                   Est. Year
                 </p>
               </div>
@@ -112,9 +112,9 @@ export function HeroSection() {
             </div>
 
             {/* Floating elements */}
-            <div className="absolute -top-6 -right-6 h-24 w-24 rounded-2xl bg-accent flex flex-col items-center justify-center text-white shadow-xl animate-bounce">
-              <span className="text-2xl font-bold">100%</span>
-              <span className="text-[10px] uppercase font-bold tracking-tighter text-center px-1">Dedicated</span>
+            <div className="absolute top-2 right-2 sm:-top-6 sm:-right-6 h-20 w-20 sm:h-24 sm:w-24 rounded-2xl bg-accent flex flex-col items-center justify-center text-white shadow-xl animate-bounce">
+              <span className="text-xl sm:text-2xl font-bold">100%</span>
+              <span className="text-[8px] sm:text-[10px] uppercase font-bold tracking-tighter text-center px-1">Dedicated</span>
             </div>
           </motion.div>
         </div>
