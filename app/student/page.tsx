@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function StudentResourcesPage() {
   const resources = [
@@ -141,6 +142,3 @@ export default function StudentResourcesPage() {
     </div>
   );
 }
-
-// Helper to make cn work in server component if needed (though next.js handles it)
-import { cn } from "@/lib/utils";

@@ -2,6 +2,12 @@ import { SectionHeader } from "@/components/common/section-header";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, ArrowRight, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Notice Board",
+  description: "Stay updated with the latest news, announcements, and events from Anshu Memorial Academy's official notice board.",
+};
 
 export default function NoticeBoardPage() {
   const notices = [

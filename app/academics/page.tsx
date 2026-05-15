@@ -1,5 +1,14 @@
 import { SectionHeader } from "@/components/common/section-header";
 import { CTASection } from "@/components/common/cta-section";
+import { Metadata } from "next";
+import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   BookOpen,
   Laptop,
@@ -10,13 +19,11 @@ import {
   Users,
   Star,
 } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "Academics",
+  description: "Explore our comprehensive academic programs following the CBSE pattern, from Play Group to Middle School, designed for holistic student development.",
+};
 
 export default function AcademicsPage() {
   const levels = [
@@ -158,11 +165,13 @@ export default function AcademicsPage() {
                 ))}
               </div>
             </div>
-            <div className="relative aspect-square lg:aspect-auto lg:h-125 rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop"
+            <div className="relative aspect-square lg:aspect-auto lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/placeholders/placeholder.svg"
                 alt="Students in classroom"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

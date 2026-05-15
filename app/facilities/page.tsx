@@ -1,6 +1,13 @@
 import { SectionHeader } from "@/components/common/section-header";
 import { CTASection } from "@/components/common/cta-section";
 import { Book, Computer, Library, Shield, Trophy, Users, Bus, Zap, Wind } from "lucide-react";
+import { Metadata } from "next";
+import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Facilities",
+  description: "Discover the modern infrastructure and facilities at Anshu Memorial Academy, including smart classes, computer labs, library, and safe transport.",
+};
 
 export default function FacilitiesPage() {
   const facilities = [
@@ -90,11 +97,13 @@ export default function FacilitiesPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
              <div className="relative">
-                <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                  <img
-                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
+                <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative">
+                  <Image
+                    src="/images/placeholders/placeholder.svg"
                     alt="Computer Lab"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 bg-accent p-6 rounded-2xl shadow-xl text-white">

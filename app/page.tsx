@@ -1,6 +1,9 @@
 import { HeroSection } from "@/components/sections/hero";
 import { SectionHeader } from "@/components/common/section-header";
 import { CTASection } from "@/components/common/cta-section";
+import { siteConfig } from "@/config/site";
+import { Metadata } from "next";
+import Image from "next/image";
 import {
   GraduationCap,
   Users,
@@ -10,48 +13,52 @@ import {
   Laptop,
 } from "lucide-react";
 
+export const metadata: Metadata = {
+  title: "Anshu Memorial Academy | Best English Medium School in Rajapakar, Vaishali",
+  description: "Anshu Memorial Academy (AMA) is a premium Co-educational English Medium school following CBSE pattern in Rajapakar, Vaishali, Bihar. Established in 2017.",
+};
+
 export default function Home() {
-  const features = [
-    {
-      title: "CBSE Pattern",
-      description:
-        "Comprehensive curriculum following CBSE guidelines for modern educational standards.",
-      icon: <GraduationCap className="h-6 w-6" />,
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "name": siteConfig.name,
+    "url": siteConfig.url,
+    "logo": `${siteConfig.url}/logo.png`,
+    "image": siteConfig.ogImage,
+    "description": siteConfig.description,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bhatha Chowk, Bhatha Dasi, Rajapakar",
+      "addressLocality": "Vaishali",
+      "addressRegion": "Bihar",
+      "postalCode": "844124",
+      "addressCountry": "IN"
     },
-    {
-      title: "Smart Classes",
-      description:
-        "Interactive learning with digital tools to make education engaging and effective.",
-      icon: <Laptop className="h-6 w-6" />,
-    },
-    {
-      title: "Computer Lab",
-      description:
-        "Fully equipped computer lab to prepare students for the digital world.",
-      icon: <Microscope className="h-6 w-6" />,
-    },
-    {
-      title: "Expert Faculty",
-      description:
-        "Dedicated and qualified teachers who nurture every student's unique potential.",
-      icon: <Users className="h-6 w-6" />,
-    },
-    {
-      title: "Safe Environment",
-      description:
-        "A secure and disciplined campus ensuring peace of mind for parents.",
-      icon: <ShieldCheck className="h-6 w-6" />,
-    },
-    {
-      title: "Co-curricular",
-      description:
-        "Emphasis on sports, arts, and cultural activities for holistic development.",
-      icon: <Palette className="h-6 w-6" />,
-    },
-  ];
+    "telephone": siteConfig.contact.phones[0],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "07:30",
+        "closes": "13:30"
+      }
+    ]
+  };
 
   return (
     <div className="flex flex-col gap-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <HeroSection />
 
       {/* Highlights Section */}
@@ -64,7 +71,44 @@ export default function Home() {
           />
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
+            {[
+              {
+                title: "CBSE Pattern",
+                description:
+                  "Comprehensive curriculum following CBSE guidelines for modern educational standards.",
+                icon: <GraduationCap className="h-6 w-6" />,
+              },
+              {
+                title: "Smart Classes",
+                description:
+                  "Interactive learning with digital tools to make education engaging and effective.",
+                icon: <Laptop className="h-6 w-6" />,
+              },
+              {
+                title: "Computer Lab",
+                description:
+                  "Fully equipped computer lab to prepare students for the digital world.",
+                icon: <Microscope className="h-6 w-6" />,
+              },
+              {
+                title: "Expert Faculty",
+                description:
+                  "Dedicated and qualified teachers who nurture every student's unique potential.",
+                icon: <Users className="h-6 w-6" />,
+              },
+              {
+                title: "Safe Environment",
+                description:
+                  "A secure and disciplined campus ensuring peace of mind for parents.",
+                icon: <ShieldCheck className="h-6 w-6" />,
+              },
+              {
+                title: "Co-curricular",
+                description:
+                  "Emphasis on sports, arts, and cultural activities for holistic development.",
+                icon: <Palette className="h-6 w-6" />,
+              },
+            ].map((feature, index) => (
               <div
                 key={index}
                 className="group relative overflow-hidden rounded-2xl border bg-secondary/10 p-8 transition-all hover:bg-white hover:shadow-xl hover:-translate-y-1"
@@ -84,26 +128,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+{/* About Brief Section */}
+<section className="py-24 bg-secondary/20 overflow-hidden">
+  <div className="container mx-auto px-4 md:px-6">
+    <div className="grid gap-12 lg:grid-cols-2 items-center">
+      <div className="order-2 lg:order-1 relative px-2 sm:px-0">
+        <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative w-full max-w-md mx-auto lg:max-w-none">
+          <Image
+            src="/images/placeholders/placeholder.svg"
+            alt="School Building"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
+        <div className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-6 bg-white p-4 sm:p-6 rounded-2xl shadow-xl max-w-[200px] sm:max-w-xs z-20">
+          <p className="text-xs sm:text-sm font-bold text-primary mb-1">
+            Managed By
+          </p>
+          <p className="text-sm sm:text-lg font-bold">Anita Bindeshwar Foundation</p>
+        </div>
+      </div>
 
-      {/* About Brief Section */}
-      <section className="py-24 bg-secondary/20 overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
-            <div className="order-2 lg:order-1 relative">
-              <div className="aspect-4/5 rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop"
-                  alt="School Building"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-2 -right-2 sm:-bottom-6 sm:-right-6 bg-white p-4 sm:p-6 rounded-2xl shadow-xl max-w-60">
-                <p className="text-xs sm:text-sm font-bold text-primary mb-1">
-                  Managed By
-                </p>
-                <p className="text-base sm:text-lg font-bold">Anita Bindeshwar Foundation</p>
-              </div>
-            </div>
             <div className="order-1 lg:order-2 space-y-6">
               <span className="text-sm font-bold uppercase tracking-widest text-accent">
                 About Our School

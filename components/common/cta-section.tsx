@@ -49,7 +49,7 @@ export function CTASection({
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8"
+                  className="w-full sm:w-auto border-white/40 text-white hover:bg-white hover:text-primary px-8 transition-colors"
                   asChild
                 >
                   <Link href={secondaryButtonHref}>{secondaryButtonText}</Link>

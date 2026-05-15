@@ -2,6 +2,12 @@ import { SectionHeader } from "@/components/common/section-header";
 import { ContactForm } from "@/components/common/contact-form";
 import { siteConfig } from "@/config/site";
 import { Mail, MapPin, Phone, Clock, Globe } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Get in touch with Anshu Memorial Academy. Find our address, phone numbers, and email, or send us a message through our contact form.",
+};
 
 export default function ContactPage() {
   const contactDetails = [

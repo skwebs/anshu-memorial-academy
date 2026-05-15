@@ -2,12 +2,18 @@ import { SectionHeader } from "@/components/common/section-header";
 import { CTASection } from "@/components/common/cta-section";
 import { AdmissionInquiryForm } from "@/components/common/admission-form";
 import { FileText, CheckCircle, ClipboardCheck, Users } from "lucide-react";
+import { Metadata } from "next";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+export const metadata: Metadata = {
+  title: "Admissions 2026-27",
+  description: "Get detailed information about the admission process, required documents, and age criteria for the 2026-27 session at Anshu Memorial Academy.",
+};
 
 export default function AdmissionsPage() {
   const steps = [

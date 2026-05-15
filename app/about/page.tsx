@@ -1,6 +1,13 @@
 import { SectionHeader } from "@/components/common/section-header";
 import { CTASection } from "@/components/common/cta-section";
 import { ShieldCheck, Target, Eye, Heart, GraduationCap, History } from "lucide-react";
+import { Metadata } from "next";
+import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about Anshu Memorial Academy, its rich history since 2017, mission, vision, and the core values that make us a leading school in Rajapakar, Vaishali.",
+};
 
 export default function AboutPage() {
   const values = [
@@ -51,14 +58,16 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                <img
-                  src="https://images.unsplash.com/photo-1523050335192-ce125a431290?q=80&w=2070&auto=format&fit=crop"
+              <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative">
+                <Image
+                  src="/images/placeholders/placeholder.svg"
                   alt="School Campus"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <div className="absolute -top-4 -left-4 h-24 w-24 bg-accent rounded-2xl -z-10" />
+              <div className="absolute -top-4 -left-4 h-24 w-24 bg-accent rounded-2xl -z-10 hidden sm:block" />
             </div>
           </div>
         </div>

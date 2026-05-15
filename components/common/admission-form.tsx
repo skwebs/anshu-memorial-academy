@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { CheckCircle2, GraduationCap } from "lucide-react";
+import { submitAdmissionForm } from "@/actions/admission";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   studentName: z.string().min(2, { message: "Student name is required." }),
@@ -43,10 +45,20 @@ export function AdmissionInquiryForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log(values);
-    setIsSubmitting(false);
-    setIsSuccess(true);
+    try {
+      const result = await submitAdmissionForm(values);
+      if (result.success) {
+        setIsSuccess(true);
+        form.reset();
+        toast.success(result.success);
+      } else {
+        toast.error(result.error || "Something went wrong");
+      }
+    } catch (error) {
+      toast.error("Failed to submit inquiry. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (isSuccess) {
