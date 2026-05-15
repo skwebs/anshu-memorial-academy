@@ -1,57 +1,28 @@
 import { SectionHeader } from "@/components/common/section-header";
 import { 
   FileText, 
-  CalendarCheck, 
-  CreditCard, 
-  LogIn, 
   Download, 
   ExternalLink,
-  GraduationCap
+  GraduationCap,
+  ChevronRight
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { studentPortalConfig } from "@/config/student-portal";
 
 export default function StudentResourcesPage() {
-  const resources = [
-    {
-      title: "Exam Results",
-      description: "Access your latest examination results and academic performance reports.",
-      icon: <FileText className="h-8 w-8 text-primary" />,
-      href: "/student/result",
-      color: "bg-blue-50",
-    },
-    {
-      title: "Attendance Record",
-      description: "Track your daily attendance and view monthly attendance reports.",
-      icon: <CalendarCheck className="h-8 w-8 text-primary" />,
-      href: "/student/attendance",
-      color: "bg-green-50",
-    },
-    {
-      title: "Online Fee Payment",
-      description: "Securely pay school fees online and download previous receipts.",
-      icon: <CreditCard className="h-8 w-8 text-primary" />,
-      href: "/student/fees",
-      color: "bg-purple-50",
-    },
-    {
-      title: "Student Portal Login",
-      description: "Login to your personal dashboard to manage all your school activities.",
-      icon: <LogIn className="h-8 w-8 text-primary" />,
-      href: "/student/login",
-      color: "bg-orange-50",
-    },
-  ];
-
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <section className="bg-primary py-16 text-primary-foreground">
-        <div className="container mx-auto px-4 md:px-6">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Student Resources</h1>
-          <p className="mt-4 text-lg opacity-80 max-w-2xl">
-            Everything you need for your academic journey, all in one place. Access results, attendance, and more.
+      <section className="bg-primary py-20 text-primary-foreground relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-12 opacity-10 hidden lg:block">
+           <GraduationCap className="h-64 w-64" />
+        </div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6">Student Resources</h1>
+          <p className="text-xl opacity-90 max-w-2xl leading-relaxed">
+            Everything you need for your academic journey, all in one place. Access results, attendance, and more via our integrated digital campus.
           </p>
         </div>
       </section>
@@ -64,23 +35,29 @@ export default function StudentResourcesPage() {
             title="Access Your Portal"
             description="Our integrated student management system provides easy access to all essential services."
           />
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {resources.map((res, i) => (
-              <div key={i} className={cn("p-8 rounded-3xl border border-border shadow-sm hover:shadow-xl transition-all flex flex-col items-center text-center space-y-4 group", res.color)}>
-                 <div className="h-16 w-16 rounded-2xl bg-white shadow-md flex items-center justify-center transition-transform group-hover:scale-110">
-                    {res.icon}
-                 </div>
-                 <h3 className="text-xl font-bold text-primary">{res.title}</h3>
-                 <p className="text-sm text-muted-foreground leading-relaxed">
-                    {res.description}
-                 </p>
-                 <Button asChild className="w-full mt-auto">
-                    <Link href={res.href} className="flex items-center justify-center">
-                       Open <ExternalLink className="ml-2 h-4 w-4" />
-                    </Link>
-                 </Button>
-              </div>
-            ))}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {studentPortalConfig.map((res, i) => {
+              const Icon = res.icon;
+              return (
+                <div key={i} className={cn("p-8 rounded-3xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center space-y-5 group", res.color)}>
+                  <div className="h-16 w-16 rounded-2xl bg-white shadow-sm flex items-center justify-center transition-all group-hover:scale-110 group-hover:shadow-md">
+                      <Icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-primary mb-2">{res.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                        {res.description}
+                    </p>
+                  </div>
+                  <Button asChild className="w-full mt-auto rounded-xl font-semibold shadow-sm group-hover:shadow-md transition-all">
+                      <Link href={res.href} className="flex items-center justify-center">
+                        {res.external ? "Open Portal" : "Access Now"} 
+                        <ChevronRight className="ml-2 h-4 w-4" />
+                      </Link>
+                  </Button>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

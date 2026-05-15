@@ -7,6 +7,7 @@
 - [ ] Detailed staff list (if required)
 - [ ] Annual calendar / Holidays
 - [ ] Fee structure details
+- [ ] Real portal URLs for Student management system integration
 
 ## Assets Needed
 - [ ] High-quality hero image
